@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 
+import authRoutes from './routes/user.routes.js'; // Adjust the path as necessary
+
 const app = express();
 
 // Middleware to parse JSON bodies
@@ -11,5 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // route
+app.use('/auth', authRoutes)
 
 export default app;
